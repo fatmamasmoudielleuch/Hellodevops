@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+                 sh 'rm -R Hi'
+                sh 'mkdir Hi'
+            }
+        }
+         stage('By') {
+            steps {
+                echo 'By'
+                sh 'mkdir By'
+            }
+        }
+    }
+}

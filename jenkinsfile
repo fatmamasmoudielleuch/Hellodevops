@@ -2,17 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Git SCM') {
             steps {
-                echo 'Hello World'
-                
-                sh 'mkdir Hi'
+               git branch: 'main', url: 'https://github.com/fatmamasmoudielleuch/Hellodevops.git'
             }
         }
-         stage('By') {
+         stage('Run') {
             steps {
-                echo 'By'
-                sh 'mkdir By'
+                echo 'Running'
+                sh 'mvn clean install'
             }
         }
     }
